@@ -1,0 +1,158 @@
+@font-face {
+  font-family: lightFont;
+  src: url(./assets/JosefinSans-Italic-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: boldFont;
+  src: url(./assets/JosefinSans-VariableFont_wght.ttf);
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  height: 100vh;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.app {
+  position: relative;
+}
+
+.app__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: lightFont;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.header__container {
+  display: flex;
+  width: 500px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__text {
+  font-family: boldFont;
+  letter-spacing: 8px;
+  font-size: 36px;
+  color: white;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  width: 512px;
+  padding: 12px 20px;
+  padding-left: 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.input__field {
+  background-color: transparent;
+  font-family: lightFont;
+  font-size: 18px;
+  width: 100%;
+  border: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.input__field:focus {
+  outline: none;
+}
+
+.todo__container {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.todo__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  padding: 15px 5px;
+  width: 500px;
+  transform-origin: 50% 0;
+  animation: append-animate 0.3s linear;
+}
+
+.todo__item:first-child {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.select__container ul {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top: 0;
+  padding: 15px 5px;
+  margin-top: 0;
+  width: 500px;
+}
+
+.select__items {
+  display: flex;
+  justify-content: space-between;
+}
+
+.select__items li {
+  padding-left: 10px;
+}
+
+.select__items li:hover,
+.select__completed:hover {
+  cursor: pointer;
+  font-weight: 1000;
+}
+
+.icon:hover {
+  cursor: pointer;
+}
+
+@keyframes append-animate {
+  from {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  to {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  form {
+    width: 375px;
+  }
+  .todo__item {
+    width: 365px;
+  }
+  .select__container ul {
+    width: 365px;
+  }
+  .select__items {
+    display: block;
+    text-align: center;
+  }
+  .header__container {
+    width: 360px;
+  }
+  .app__container {
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
